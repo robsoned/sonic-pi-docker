@@ -1,11 +1,8 @@
+# syntax=docker/dockerfile:1
+
 FROM ubuntu:24.04
 
-WORKDIR /sonic-pi
-
-# Install dependencies
-RUN apt-get update \
-    && apt-get install -y \
-    build-essential \
+ENV APT_DEPENDENCIES="build-essential \
     git \
     libssl-dev \
     ruby-dev elixir \
@@ -30,4 +27,11 @@ RUN apt-get update \
     qpwgraph \
     compton \
     qtcreator \
-    curl 
+    curl \
+    libibus-1.0-dev"
+
+WORKDIR /sonic-pi
+
+COPY ./build-scripts /tmp/build-scripts
+
+RUN /tmp/build-scripts/install-apt-dependencies.sh ${APT_DEPENDENCIES}
