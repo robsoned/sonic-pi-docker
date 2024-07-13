@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-cd app \
+cd /sonic-pi/app \
 && ./pi-install-elixir.sh \
 && ./linux-build-all.sh \
 && echo "Sonic Pi installed successfully"
