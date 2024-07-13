@@ -5,3 +5,5 @@ services:
     build: .
     # keep the container running
     entrypoint: tail -f /dev/null
+    environment:
+      - DISPLAY=
