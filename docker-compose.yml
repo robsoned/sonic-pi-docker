@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  sonic-pi:
+    build: .
+    # keep the container running
+    entrypoint: tail -f /dev/null
