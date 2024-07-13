@@ -35,6 +35,8 @@ WORKDIR /sonic-pi
 
 COPY ./build-scripts /tmp/build-scripts
 
-RUN /tmp/build-scripts/install-apt-dependencies.sh
-
 ADD https://github.com/sonic-pi-net/sonic-pi.git /sonic-pi
+
+RUN /tmp/build-scripts/install-apt-dependencies.sh \
+    && /tmp/build-scripts/install-sonic-pi.sh \
+    && rm -rf /tmp/build-scripts
