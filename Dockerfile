@@ -28,10 +28,13 @@ ENV APT_DEPENDENCIES="build-essential \
     compton \
     qtcreator \
     curl \
-    libibus-1.0-dev"
+    libibus-1.0-dev \
+    gcc-12"
 
 WORKDIR /sonic-pi
 
 COPY ./build-scripts /tmp/build-scripts
 
-RUN /tmp/build-scripts/install-apt-dependencies.sh ${APT_DEPENDENCIES}
+RUN /tmp/build-scripts/install-apt-dependencies.sh
+
+ADD https://github.com/sonic-pi-net/sonic-pi.git /sonic-pi
