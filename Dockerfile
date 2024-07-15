@@ -29,7 +29,10 @@ ENV APT_DEPENDENCIES="build-essential \
     qtcreator \
     curl \
     libibus-1.0-dev \
-    gcc-12"
+    gcc-12 \
+    catatonit \
+    supercollider \
+    pulseaudio-module-jack"
 
 WORKDIR /sonic-pi
 
