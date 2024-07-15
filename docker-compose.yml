@@ -6,4 +6,17 @@ services:
     # keep the container running
     entrypoint: tail -f /dev/null
     environment:
-      - DISPLAY=
+      - DISPLAY=$DISPLAY
+      # - QT_DEBUG_PLUGINS=1
+      # - QT_QPA_PLATFORM=xcb
+      # - QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt6/plugins/platforms
+      # - QT_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt6/plugins
+      # - XDG_SESSION_TYPE=x11
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - $HOME/.Xauthority:/root/.Xauthority
+    # hostname: $HOSTNAME
+    # network_mode: host
+    # privileged: true
+    # devices:
+    #   - /dev/snd:/dev/snd
