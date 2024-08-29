@@ -20,3 +20,4 @@ services:
     # privileged: true
     # devices:
     #   - /dev/snd:/dev/snd
+    
